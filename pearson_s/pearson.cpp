@@ -33,20 +33,18 @@ int main(int argc, char const* argv[])
 
     //prepare for parallelization
     int size_dataset = datasets.size();
-    std::cout << "size datasets " << size_dataset << std::endl;
+    // std::cout << "size datasets " << size_dataset << std::endl;
     int n_threads = atoi(argv[3]);
-    std::cout << "running with " << n_threads << std::endl; 
+    // std::cout << "running with " << n_threads << std::endl; 
 
     if(n_threads <= 0){
         n_threads = 1;
     }
     int total_pairs = size_dataset * (size_dataset - 1)/2;
-    cout << "total pairs: " << total_pairs << endl;
-    int pairs_per_thread = total_pairs / n_threads;
+    // cout << "total pairs: " << total_pairs << endl;
     int base = total_pairs / n_threads;
     int rem = total_pairs % n_threads;
-    cout << "pairs per threads " << pairs_per_thread << endl; 
-    //create threads => calling correlation_coefficieints
+    // cout << "pairs per threads " << base << endl; 
     std::vector<pthread_t> threads(n_threads);
     std::vector<Analysis::ThreadData> thread_data(n_threads);
     int next_start = 0;
@@ -56,8 +54,8 @@ int main(int argc, char const* argv[])
         int add = base + (t < rem ? 1 : 0);
         int end = start + add;
         next_start = end;
-        cout << "start" << start << endl;
-        cout << "end " << end << endl;
+        // cout << "start" << start << endl;
+        // cout << "end " << end << endl;
         thread_data[t] = {&datasets, start, end, {}};
         pthread_create(&threads[t], nullptr, Analysis::correlation_coefficients, &thread_data[t]);
 
