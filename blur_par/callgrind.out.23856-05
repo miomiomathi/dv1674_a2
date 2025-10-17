@@ -1,0 +1,870 @@
+# callgrind format
+version: 1
+creator: callgrind-3.18.1
+pid: 23856
+cmd:  ./blur 15 data/im4.ppm out_data/im4o.ppm 4
+part: 1
+thread: 5
+
+
+desc: I1 cache: 
+desc: D1 cache: 
+desc: LL cache: 
+
+desc: Timerange: Basic block 0 - 5776298606
+desc: Trigger: Program termination
+
+positions: line
+events: Ir
+summary: 14661649903
+
+
+ob=(3) /usr/lib/x86_64-linux-gnu/libc.so.6
+fl=(291) ./nptl/./nptl/pthread_mutex_unlock.c
+fn=(3744) __pthread_mutex_unlock_usercnt
+48 1
++3 3
++1 2
+-4 1
++9 2
++5 1
++1 2
+-24 1
++1 2
++3 4
++27 1
++34 2
+-64 3
+
+fn=(3700) pthread_mutex_unlock@@GLIBC_2.2.5
+367 4500001
+51 13500003
++1 9000002
+367 4500001
+57 9000002
++8 4500001
+-3 4500001
+-23 4500001
++1 9000002
++3 18000004
++27 4500001
+369 9000002
+40 13500003
++37 12
+-34 24
+cfi=(306) ./nptl/./nptl/lowlevellock.c
+cfn=(3756) __lll_lock_wake
+calls=12 +20 
+* 84
+* 36
+
+fl=(316) ./resolv/./resolv/resolv_context.c
+fn=(3790) __resolv_context_freeres
+242 4
++2 1
+-2 2
++2 1
++1 1
++1 2
++6 6
+
+fl=(310) ./nptl/../nptl/pthread_mutex_lock.c
+fn=(3778) __pthread_mutex_cond_lock
+77 1
++3 3
++2 1
++2 2
+-7 2
++11 2
++2 3
++3 4
++1 3
++73 1
++3 1
++5 1
++2 1
++1 3
+
+fl=(311) ./stdlib/./stdlib/cxa_thread_atexit_impl.c
+fn=(3780) __call_tls_dtors
+149 4
++1 4
++18 4
+
+fl=(200) ./setjmp/../sysdeps/x86_64/setjmp.S
+fn=(1354) __sigsetjmp
+30 1
++2 1
++9 1
++1 2
++1 1
++4 1
++1 1
++1 1
++1 1
++1 1
++2 2
++2 1
++1 1
++1 1
++2 2
++2 1
++5 1
++1 1
++17 1
+cfi=(201) ./setjmp/./setjmp/sigjmp.c
+cfn=(1356) __sigjmp_save
+calls=1 -56 
+* 9
+
+fl=(312) ./nptl/./nptl/nptl_deallocate_tsd.c
+fn=(3782) __nptl_deallocate_tsd
+23 1
++5 4
++82 1
+
+fl=(290) ./nptl/./nptl/pthread_mutex_lock.c
+fn=(3698) pthread_mutex_lock@@GLIBC_2.2.5
+77 4500001
++3 13500003
++2 4500001
++2 9000002
+-7 9000002
++11 9000002
++2 13500003
+-46 4500001
++1 22500005
++3 18000004
++46 13500003
++73 4500001
++3 4500001
++2 4500001
++3 4500001
++2 4500001
++1 13500003
+48 14
+cfi=(306)
+cfn=(3754) __lll_lock_wait
+calls=7 -7 
+* 166
+* 14
+
+fl=(224) ./misc/../sysdeps/unix/syscall-template.S
+fn=(3802) madvise
+117 5
++5 1
+
+fl=(155) ./ctype/./ctype/ctype-info.c
+fn=(512) __ctype_init
+29 1
++2 7
++2 4
++2 4
++1 1
+
+fl=(183) ./nptl/./nptl/cleanup_compat.c
+fn=(898) _pthread_cleanup_pop@@GLIBC_2.34
+40 1
++3 2
++4 2
++2 1
+
+fn=(882) _pthread_cleanup_push@@GLIBC_2.34
+25 1
++3 1
++1 1
++1 2
++2 1
++1 1
+
+fl=(305) ./nptl/./nptl/cancellation.c
+fn=(3752) __pthread_enable_asynccancel
+31 1
++1 1
++2 3
++1 1
++2 1
++2 2
++3 3
++7 1
+
+fn=(3776) __pthread_disable_asynccancel
+56 1
++3 2
++4 2
++1 1
+
+fl=(315) ./resolv/./resolv/res-close.c
+fn=(3788) __res_thread_freeres
+131 4
++1 1
+cfi=(316)
+cfn=(3790)
+calls=1 242 
+* 17
++2 5
++8 4
+
+fl=(287) ./misc/../sysdeps/unix/sysv/linux/getpagesize.c
+fn=(3678) getpagesize
+27 1
++1 4
++2 1
+
+fl=(301) ./nptl/./nptl/pthread_cond_wait.c
+fn=(3742) pthread_cond_wait@@GLIBC_2.3.2
+625 17
+386 1
+fi=(303) ./nptl/../include/atomic_wide_counter.h
+50 2
+fe=(301)
+409 1
+-5 1
++5 1
+-5 2
++1 3
++4 1
++10 2
+fi=(302) ./nptl/./nptl/pthread_cond_common.c
+186 1
+fe=(301)
+419 1
+cfi=(291)
+cfn=(3744)
+calls=1 48 
+* 25
+fi=(302)
+186 1
+fe=(301)
+419 1
++1 2
++12 4
++33 2
++19 2
++17 2
+-32 4
++63 3
+fi=(303)
+30 2
+fe=(301)
+540 4
+53 5
+616 2
+cfi=(310)
+cfn=(3778)
+calls=1 77 
+* 28
+* 1
++2 2
++10 12
+484 2
++1 3
+fi=(303)
+30 1
+fe=(301)
+486 3
++15 1
+-3 1
++3 5
+-3 1
+-1 1
++3 1
++1 1
+cfi=(183)
+cfn=(882)
+calls=1 25 
+* 7
++2 6
+cfi=(304) ./nptl/./nptl/futex-internal.c
+cfn=(3750) __futex_abstimed_wait_cancelable64
+calls=1 138 
+* 69
++3 2
+-3 1
++3 1
+cfi=(183)
+cfn=(898)
+calls=1 40 
+* 6
++2 6
+152 5
+524 1
+-59 2
+
+fl=(201)
+fn=(1356)
+28 3
++2 2
+-1 1
++5 3
+
+fl=(172) ./malloc/./malloc/malloc.c
+fn=(1670) free
+3352 2
++4 4
++39 2
+
+fl=(313) ./malloc/./malloc/thread-freeres.c
+fn=(3784) __libc_thread_freeres
+34 2
++2 1
+cfi=(314) ./sunrpc/./sunrpc/rpc_thread.c
+cfn=(3786) __rpc_thread_destroy
+calls=1 -15 
+* 12
++2 1
+cfi=(315)
+cfn=(3788)
+calls=1 +93 
+* 31
+fi=(317) ./malloc/../sysdeps/unix/sysv/linux/tls-internal.h
+-4 3
+cob=(2) ???
+cfi=(51) ???
+cfn=(1746) 0x0000000004ba7370
+calls=1 -34 
+* 6
++1 3
+cob=(2)
+cfi=(51)
+cfn=(1746)
+calls=1 -35 
+* 6
+fe=(313)
++5 1
+cfi=(318) ./dlfcn/./dlfcn/libc_dlerror_result.c
+cfn=(3794) __libc_dlerror_result_free
+calls=1 -11 
+* 8
++5 1
+-1 1
+cfi=(173) ./malloc/./malloc/arena.c
+cfn=(3796) __malloc_arena_thread_freeres
+calls=1 999 
+* 27
+
+fl=(318)
+fn=(3794)
+29 2
++1 4
++9 2
+
+fl=(314)
+fn=(3786)
+21 4
++1 2
++2 2
++15 4
+
+fl=(295) ./misc/../sysdeps/unix/sysv/linux/x86_64/clone.S
+fn=(3712) clone
+83 1
++1 1
++1 1
++10 1
++3 1
++1 1
++1 1
+cfi=(282) ./nptl/./nptl/pthread_create.c
+cfn=(3714) start_thread
+calls=1 336 
+* 14661649896
+
+fl=(304)
+fn=(3750)
+138 6
+-61 2
++3 2
++3 3
++1 2
+-27 4
++46 8
++10 1
++28 7
+-84 2
+cfi=(305)
+cfn=(3752)
+calls=1 -26 
+* 13
+* 12
+cfi=(305)
+cfn=(3776)
+calls=1 -1 
+* 6
+* 1
+
+fl=(282)
+fn=(3714)
+336 8
++7 2
++22 4
++3 1
+cfi=(155)
+cfn=(512)
+calls=1 29 
+* 17
++4 1
+fi=(296) ./nptl/../sysdeps/unix/sysv/linux/rseq-internal.h
+32 3
++8 1
+fe=(282)
+373 2
++10 5
++17 2
+cfi=(199) ./setjmp/../sysdeps/x86_64/bsd-_setjmp.S
+cfn=(1352) _setjmp
+calls=1 28 
+* 34
+* 1
++14 1
++4 1
+-18 1
++14 1
++4 4
++3 2
++3 2
++2 1
+fi=(335) ./nptl/../sysdeps/unix/sysv/linux/internal-signals.h
+110 4
+fe=(282)
+426 1
+fi=(335)
+110 1
+fe=(282)
+428 1
++4 2
++11 1
++7 1
+cfi=(311)
+cfn=(3780)
+calls=1 149 
+* 12
++3 1
+cfi=(312)
+cfn=(3782)
+calls=1 23 
+* 6
++3 1
+cfi=(313)
+cfn=(3784)
+calls=1 34 
+* 103
++3 3
++31 2
++2 4
+fi=(319) ./nptl/../sysdeps/unix/sysv/linux/sigsetops.h
+112 1
+fe=(282)
+506 3
+fi=(319)
+112 2
+fe=(282)
+505 1
++1 2
++7 5
++1 1
++1 1
+-1 1
++1 3
++35 3
+fi=(286) ./nptl/./nptl/allocatestack.c
+190 1
+cfi=(287)
+cfn=(3678)
+calls=1 27 
+* 6
+fe=(282)
+551 1
+fi=(286)
+190 1
++2 1
+fe=(282)
+551 1
+fi=(286)
+192 4
++1 2
++1 2
+fe=(282)
+554 3
++17 3
+442 3
+cob=(8) /home/marq23/prestandaoptimering/assignment2/dv1674_a2/blur_par/blur
+cfi=(197) /home/marq23/prestandaoptimering/assignment2/dv1674_a2/blur_par/filters.cpp
+cfn=(3718) Filter::blur(void*)
+calls=1 42 
+* 14661649596
+* 1
+fi=(286)
+195 4
+cfi=(224)
+cfn=(3802)
+calls=1 -78 
+* 6
+* 1
+fe=(282)
+
+fl=(173)
+fn=(3796)
+999 8
+fi=(172)
+3206 1
++2 1
+-2 1
++2 1
++2 2
+fe=(173)
+1005 2
++1 1
++2 2
++13 8
+
+fl=(306)
+fn=(3756)
+63 12
++1 60
++1 12
+
+fn=(3754)
+41 7
++1 7
+-1 7
++1 14
++3 52
++3 8
+fi=(185) ./nptl/../sysdeps/nptl/futex-internal.h
++98 64
+-59 7
+fe=(306)
+
+fl=(199)
+fn=(1352)
+28 1
++2 1
++2 1
+cfi=(200)
+cfn=(1354)
+calls=1 -2 
+* 31
+
+ob=(8)
+fl=(197)
+fn=(3720) Filter::Gauss::get_weights(int, double*)
+32 7
++1 2
++2 128
++1 240
+cob=(2)
+cfi=(51)
+cfn=(3722) 0x000000000010f130
+calls=16 -36 
+* 872
+* 32
+-3 67
++5 5
+
+fn=(3718)
+42 11
++1 2
++1 3
++4 1005
++1 5
+cfn=(3720)
+calls=1 -17 
+* 1353
++7 4
++2 1500
++10 18000000
+cfi=(195) /home/marq23/prestandaoptimering/assignment2/dv1674_a2/blur_par/matrix.cpp
+cfn=(3638) Matrix::r(unsigned int, unsigned int)
+calls=2250000 +88 
+* 40500000
+* 31500000
+cfi=(195)
+cfn=(3640) Matrix::g(unsigned int, unsigned int)
+calls=2250000 +93 
+* 40500000
+* 31500000
+cfi=(195)
+cfn=(3642) Matrix::b(unsigned int, unsigned int)
+calls=2250000 +98 
+* 40500000
+* 18000000
++2 4500000
++2 135000000
++1 101250000
++1 67500000
++2 337500000
+cfi=(195)
+cfn=(3732) Matrix::rgb(unsigned int, unsigned int, double, double&, double&, double&)
+calls=33750000 +95 
+* 2463750000
++4 101250000
++2 135000000
++1 101250000
+cfi=(195)
+cfn=(3656) Matrix::get_x_size() const
+calls=33750000 +28 
+* 270000000
+* 168750000
++2 333900000
+cfi=(195)
+cfn=(3732)
+calls=33390000 +86 
+* 2437470000
++4 100170000
+-19 141750000
++22 6750000
+cob=(2)
+cfi=(51)
+cfn=(3734) 0x000000000010efb0
+calls=2250000 -92 
+* 83250100
++1 24750000
+cfi=(195)
+cfn=(3638)
+calls=2250000 +63 
+* 40500000
+* 2250000
++1 24750000
+cfi=(195)
+cfn=(3640)
+calls=2250000 +67 
+* 40500000
+* 2250000
++1 24750000
+cfi=(195)
+cfn=(3642)
+calls=2250000 +71 
+* 40500000
+* 2250000
++1 6750000
+cob=(2)
+cfi=(51)
+cfn=(3736) 0x000000000010ecb0
+calls=2250000 -96 
+* 58500078
+-38 11253000
+-2 3754
++43 3
+cob=(2)
+cfi=(51)
+cfn=(3734)
+calls=1 -99 
+* 37
++1 3
++20 3
++2 5
+cob=(2)
+cfi=(51)
+cfn=(3740) 0x000000000010eff0
+calls=1 0 
+* 263
+* 1
++7 3
+cob=(2)
+cfi=(51)
+cfn=(3736)
+calls=1 0 
+* 39
++2 4
++2 1500
++5 20250000
+cfi=(195)
+cfn=(3638)
+calls=2250000 +18 
+* 40500000
+* 33750000
+cfi=(195)
+cfn=(3640)
+calls=2250000 +23 
+* 40500000
+* 33750000
+cfi=(195)
+cfn=(3642)
+calls=2250000 +28 
+* 40500000
+* 18000000
++2 4500000
++2 135000000
++1 101250000
++1 67500000
++2 370260000
+cfi=(195)
+cfn=(3732)
+calls=33660000 +25 
+* 2457180000
++4 100980000
++2 134640000
++1 134640000
+-1 360000
++1 360000
++2 370260000
+cfi=(195)
+cfn=(3732)
+calls=33660000 +16 
+* 2457180000
++4 100980000
+-19 141750000
++22 6750000
+cob=(2)
+cfi=(51)
+cfn=(3734)
+calls=2250000 0 
+* 83250094
++1 24750000
+cfi=(195)
+cfn=(3638)
+calls=2250000 -7 
+* 40500000
+* 2250000
++1 24750000
+cfi=(195)
+cfn=(3640)
+calls=2250000 -3 
+* 40500000
+* 2250000
++1 24750000
+cfi=(195)
+cfn=(3642)
+calls=2250000 +1 
+* 40500000
+* 2250000
++1 6750000
+cob=(2)
+cfi=(51)
+cfn=(3736)
+calls=2250000 0 
+* 58500065
+-33 11253000
+-2 3754
++60 7
+
+fl=(195)
+fn=(3642)
+166 54000000
++1 90000000
++1 18000000
+
+fn=(3640)
+161 54000000
++1 90000000
++1 18000000
+
+fn=(3638)
+156 54000000
++1 90000000
++1 18000000
+
+fn=(3656)
+111 135000000
++1 67500000
++1 67500000
+
+fn=(3732)
+171 1344600000
++1 2689200000
++1 2689200000
++1 2689200000
++1 403380000
+
+ob=(4) /usr/lib/x86_64-linux-gnu/libm.so.6
+fl=(298) ./math/../sysdeps/ieee754/dbl-64/e_exp.c
+fn=(3728) __ieee754_exp_fma
+98 16
+-10 16
+fi=(299) ./math/../sysdeps/ieee754/dbl-64/math_config.h
+-21 16
+fe=(298)
++21 16
++16 16
++1 48
++30 60
++16 15
+fi=(299)
+-84 15
+fe=(298)
++70 15
++14 15
+-12 15
++2 15
++1 15
+-3 15
++2 15
++1 15
++9 15
+-10 15
++10 15
+-6 15
++3 15
++3 60
++1 30
+fi=(299)
+-73 15
+fe=(298)
++78 30
+-49 2
++3 2
+
+fl=(297) ./math/./w_exp_template.c
+fn=(3724) exp@@GLIBC_2.29
+31 32
++1 32
+cob=(2)
+cfi=(51)
+cfn=(3726) 0x0000000004a86380
+calls=16 -32 
+* 584
++1 160
++4 32
+
+ob=(2)
+fl=(51)
+fn=(1746)
+0 4
+cob=(3)
+cfi=(172)
+cfn=(1670)
+calls=2 3352 
+0 8
+
+fn=(3736)
+0 9000002
+cob=(3)
+cfi=(291)
+cfn=(3700)
+calls=4500001 367 
+0 108000180
+
+fn=(3726)
+0 32
+cob=(4)
+cfi=(298)
+cfn=(3728)
+calls=16 98 
+0 552
+
+fn=(3734)
+0 9000002
+cob=(3)
+cfi=(290)
+cfn=(3698)
+calls=4500001 77 
+0 157500229
+
+fn=(3722)
+0 32
+cob=(4)
+cfi=(297)
+cfn=(3724)
+calls=16 31 
+0 840
+
+fn=(3740)
+0 2
+cob=(3)
+cfi=(301)
+cfn=(3742)
+calls=1 625 
+0 261
+
+totals: 14661649903
